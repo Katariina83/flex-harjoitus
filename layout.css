@@ -1,0 +1,99 @@
+html {
+    font-size: 62.5%;
+}
+body {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.4rem; /*fonttikoko 14px tulee käyttöön kaikkiin elementteihin bodyn sisällä*/
+    background-color: #008A8A;
+    padding: 1rem;
+}
+.wrapper {
+    display: flex;
+    flex-direction: row; /*tämä saa rivit allekkain, jos olisi column niin olisivat vierettäin*/
+    flex-wrap: wrap; /*lapset voi rivittyä*/
+}
+.wrapper > * {
+    padding: 10px;
+    flex-grow: 1; /*lapset ovat saman levyisiä*/
+    flex-basis: 100%; /*lasten minimileveys on 100%*/
+}
+.header {
+    background-color: gold;
+}
+/*Lisätään elementin <ul> lapsiin (ul li) flex*/
+/*Lisätään class indexiin <ul> perään*/
+.wrapper nav {
+    padding: 0;
+}
+.parent {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap; /*nowrap takaa ettei vaihda riviä missään vaiheessa*/
+}
+.parent > * {
+    flex-grow: 1;
+    flex-basis: 0;
+    background-color: #F6F6F6;
+    padding: 0.5rem;
+    border: solid 1px;
+    margin: -1px;
+}
+.main {
+    background-color: orange;
+}
+
+p {
+    padding-bottom:1rem;
+}
+/*some-navigointiin flex*/
+.some-parent {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+.some-parent > * {
+    flex-grow: 1;
+    flex-basis: 0;
+    margin: 13px -10px -10px -10px;
+    padding: 1rem;
+    text-align: center;
+}
+.facebook {  /*tämä on tummansininen fb laatikko*/
+    background-color: #3A5998;
+}
+.twitter {
+    background-color: #56ACEE;
+}
+.email {
+    background-color: #767775;
+}
+.aside-1 {
+    background-color: mediumseagreen;
+}
+.aside-2 {
+    background-color: seagreen;
+}
+.footer {
+    background-color: lightgreen;
+}
+/*Kopioidaan Tablet-näkymän säännöt https://www.w3schools.com/css/css_rwd_mediaqueries.asp  */
+@media only screen and (min-width: 426px) {
+    body {
+      background-color: lightgreen;}
+    .aside-2, .aside-1 {
+        flex-basis: 0;}
+    }
+/*Desktop-näkymän säännöt*/
+@media only screen and (min-width: 769px) {
+    body {
+      background-color: lightblue;}
+    .aside-1 {
+        order: 1;} /*Tämän laatikon minimileveys*/
+    .main {
+        order: 2;
+        flex-basis: 40rem;}
+    .aside-2 {
+        order: 3;}
+    .footer {
+        order: 4;}
+    }
